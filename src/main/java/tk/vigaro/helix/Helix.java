@@ -5,6 +5,7 @@ import com.rometools.rome.io.FeedException;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.pircbotx.PircBotX;
+import org.pircbotx.hooks.ListenerAdapter;
 import org.pircbotx.hooks.managers.BackgroundListenerManager;
 import tk.vigaro.helix.config.ConfigurationEsperNet;
 
@@ -27,14 +28,14 @@ import java.util.*;
  * You should have received Helix copy of the GNU Lesser General Public
  * License along with this library.
  */
-public class Helix {
+public class Helix extends ListenerAdapter {
 
     public static final NumberFormat numberFormat = NumberFormat.getInstance();
     public static final Properties properties = new Properties();
     public static List<String> hardCommands = new ArrayList<>();
     public static JSONObject commands = new JSONObject();
     public static JSONObject seen;
-    public static String botPrefix = ".";
+    public static String botPrefix = "@";
     public static String[] admins = {"vigaro"};
     public static PircBotX helix;
     public static final Character[] valid = {'1', '2', '3', '4', '5','6', '6', '8', '9'};
